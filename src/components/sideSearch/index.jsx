@@ -17,11 +17,9 @@ const SideSearch = ({sideSearch,blackMode,items,dispatch,}) => {
         }else{ 
             setData(items.filter(item => item.name.includes(searchData.toUpperCase())))
         }
-    }, [searchData])
+    }, [searchData,items])
     return (
         <div className={ sideSearch === true || sideSearch === "true" ? blackMode ? "side-bar--active-black": "side-bar--active"  : "side-bar"}>
-            {console.log(sideSearch)}
-            {console.log(blackMode)}
             <header>
                 <button onClick={() => dispatch(Actions.handleSideSearch())} className="side-bar--active__return" ><i className="fas fa-arrow-left"></i></button>
                 <h2 className="side-bar--active__title">Buscar Produto</h2>

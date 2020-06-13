@@ -1,0 +1,115 @@
+.content{
+    margin-top: 20px;
+    padding-bottom: 15px;
+    height: 95vh;
+    display: flex;
+    flex-wrap: wrap;
+    &__{
+        &image{
+            width: 430px;
+            position: relative;
+        }
+        &title{
+            font-size: 23px;
+        }
+        &block{
+            margin: 30px 0 0 100px;
+            display: flex;
+            align-items:flex-start ;
+            height: 200px;
+            flex-direction: column;
+        }
+        &old-price{
+            margin-right: 10px;
+            font-size: 17px;
+            text-decoration: line-through;
+            color: rgb(138, 138, 138);
+        }
+        &price-contents{
+            display: flex;
+            align-items: center;
+            margin: 15px;
+            width: 320px;
+            justify-content: left;
+        }
+        &installments{
+            margin-left: 10px;
+            font-size: 16px;
+            color: rgb(138, 138, 138);
+
+        }
+        &sizes{
+            display: flex;
+            margin-top: 10px;
+        }
+        &size, &size--selected{
+            margin-right: 10px;
+            font-weight: bold;
+            width: 30px;
+            padding: 5px;
+            text-align: center;
+            border: 2px solid rgb(190, 190, 190);
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(190, 190, 190);
+            }
+            &--selected{
+                background-color:rgb(83, 83, 83);
+            }
+        }
+        &button{
+            color: white;
+            margin: 20px 40px;
+            border: none;
+            background-color: rgb(83, 83, 83);
+            padding: 15px 40px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        &error{
+            background-color: red;
+            border-radius: 5px;
+            padding: 8px 20px;
+            & i{ 
+                padding-left: 5px;
+            }
+        }
+    }
+    & span{
+        color: white;
+        font-size: 16px;
+    }
+    & h4{
+        font-size: 14px;
+        color: rgb(138, 138, 138);
+
+    }
+}
+
+@media(max-width:900px){
+    .content{
+        height: 100%;
+        margin: 0px auto;
+        &__{
+            &image{
+                display: flex;
+                width: 100%;
+            }
+            &block{
+                margin: 30px auto;
+                & h2, h3, h4, button{
+                    margin: 3px auto;
+                }
+                & div{
+                    margin: 3px 7px;
+                }
+            }
+            
+        }
+        & img{
+            width: 70%;
+            margin: 0 auto;
+        }
+    }   
+}

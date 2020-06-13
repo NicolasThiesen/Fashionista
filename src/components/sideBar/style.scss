@@ -1,0 +1,156 @@
+.side-bar, .side-bar--active, .side-bar--active-black{
+    top: 0;
+    right: -430px;
+    width: 400px;
+    position: fixed;
+    background-color: white;
+    transition: all 350ms linear;
+    z-index: 10;
+    float: right;
+    height: 100%;
+    padding: 20px 10px 0 20px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    & header{
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #cecece;
+    }
+    &__{
+        &return{
+            padding: 7px;
+            cursor: pointer;
+            background-color: white;
+            border: none;
+            font-size: 20px;
+        }
+        &title{
+            margin-left: 120px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        &content, &content--search{
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #cecece;
+        }
+        &image{
+            width: 100px;
+            max-height: 150px;
+        }
+        &name, &price{
+            font-size: 14px;
+        }
+        &row{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            & span{
+                margin-left: 20px;
+                color: #838383;
+            }
+        }
+        &options{
+            display: flex;
+            margin-left: 30px;
+        }
+        &option{
+            width: 25px;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid #2c2c2c;
+            margin: 0 10px;
+            cursor: pointer;
+            &:hover{
+                background-color: #2c2c2c;
+                color: white;
+            }
+        }
+        &remove{
+            margin-left: 30px;
+            background-color: white;
+            padding: 3px;
+            border: 1px solid rgb(255, 44, 44);
+            cursor: pointer;
+            color: rgb(255, 44, 44);
+            &:hover{
+                background: rgb(255, 44, 44);
+                color: white;
+            }
+        }
+        &size{
+            margin-top: 15px;
+            font-size: 14px;   
+        }
+        &amount{
+            margin: auto 0;
+        }
+        &total{
+            font-size: 16px;
+            margin-left: 25px;
+        }
+    }
+}
+.side-bar--active, .side-bar--active-black{
+    right: 0;
+    box-shadow: 0 0 15px 15px #b3b3b3;
+}
+.side-bar--active-black{
+    background-color: rgb(29, 31, 32);
+    & button{
+        background-color: rgb(29, 31, 32);
+        color: white;
+    }
+}
+@media(max-width: 850px){
+    .side-bar--active, .side-bar--active-black{
+        width: 100%;
+        &__{
+            &return{
+                margin-left: 40px;
+            }
+            &title{
+                margin: 0 auto;
+            }
+            &name{
+                font-size: 17px;
+                margin: 0 auto;
+            }
+            &price{
+                font-size: 16px;
+            }
+            &remove{
+                right: 20px;
+            }
+            &block{
+                width: 100%;
+            }
+            &row{
+                justify-content: space-between;
+            }
+        }
+    }
+
+}
+@media(max-width: 450px){
+    .side-bar--active, .side-bar--active-black{
+        &__{
+            &price{
+                font-size: 13px;
+            }
+            &name{
+                font-size: 13px;
+                letter-spacing: -0.5px;
+            }
+            &row{
+                & span{
+                    margin-left: 10px;
+                }
+            }
+            &options{
+                margin: 0;
+            }
+        }
+    }
+}

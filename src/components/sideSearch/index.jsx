@@ -5,7 +5,8 @@ import * as Actions from "../../actions";
 
 import "./style.scss"
 
-import { handleClick } from "../../services/handles"
+import { getUrlName } from "../../services/handles"
+import { Link } from 'react-router-dom';
 
 const SideSearch = ({sideSearch,blackMode,items,dispatch,}) => {
     const [searchData, setSearchData] = useState("");
@@ -29,7 +30,8 @@ const SideSearch = ({sideSearch,blackMode,items,dispatch,}) => {
             </div>
             <div className="side-bar--active__contents">
                 { data && data.map(item => 
-                        <div className="side-bar--active__content--search" key={item.id} onClick={()=>{handleClick(item); dispatch(Actions.handleSideSearch())}}>
+                    <Link to={`/${getUrlName(item.name)}/${item.style}/${item.code_color}`} className={ blackMode ? "link--black" : "link" }>
+                        <div className="side-bar--active__content--search" key={item.id} onClick={()=>dispatch(Actions.handleSideSearch())}>
                             <img className="side-bar--active__image"src={item.image ? item.image : "https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível"} alt={item.name}></img>
                             <div className="side-bar--active__block">
                                 <div className="side-bar--active__row">
@@ -41,6 +43,7 @@ const SideSearch = ({sideSearch,blackMode,items,dispatch,}) => {
                             </div>
                             
                         </div> 
+                    </Link>
                 )}
             </div>
         </div>

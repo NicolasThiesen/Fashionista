@@ -7,6 +7,9 @@
 }
 a{
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 body{
     font-family: 'Roboto', sans-serif!important;
@@ -25,4 +28,10 @@ body{
 .black-style{
     background-color: rgb(29, 31, 32);
     color: white!important;
+}
+.link{
+    color: black;
+}
+.link--black{
+    color: white;
 }
